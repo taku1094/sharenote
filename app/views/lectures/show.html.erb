@@ -1,0 +1,67 @@
+    
+    <div class="show user_show">
+   
+        <h2>講義詳細</h2>
+        
+        <p>講義名:</p>
+        <%= @lecture.name %>
+        
+        <p>開講期:</p>
+        <%= @lecture.term %>
+        
+        <p>曜日:</p>
+        <%= @lecture.date %>
+        
+        <p>時限:</p>
+        <%= @lecture.time %>
+        
+        <p>教室:</p>
+        <%= @lecture.room %>
+        
+        <p>教授:</p>
+        <%= @lecture.professor %>
+        
+        <p>メモ:</p>
+        <%= @lecture.memo %>
+        
+        
+<div class="link">
+        <% if @lecture.user_id == current_user.email %>
+        
+        <div class="show_edit">
+        <%= link_to "編集",edit_timetable_lecture_path(@timetable) %>
+        </div>
+        
+         <div class="show_destroy">
+        <%= link_to "削除",timetable_lecture_path(@timetable),data: {:confirm => '本当に削除して構いませんか?'}, :method => :delete %>
+        </div>
+        
+        <div class="show_return">
+        <%= link_to "戻る",timetable_path(@timetable) %>
+        </div>
+        
+        
+        <% end %>
+        </div>   
+        <div class="add_index add_index_p">
+           <%= link_to '追加' , timetable_lecture_notes_path(@timetable,@lecture) %>
+        </div>
+        
+<div class="index note_index">
+           <h2>講義ノート</h2>
+    <ul>
+        <% @documents.each do|document| %>
+        <%
+            @note = Note.find_by(id: document.note_id)
+           
+        %>
+        <div class="index_title">
+        <li class="index_list"><%= link_to @note.title , timetable_lecture_note_path(@timetable,@lecture,@note) %></li>
+        </div>
+        <% end %>
+    
+    </ul>
+</div>
+        
+        
+</div>

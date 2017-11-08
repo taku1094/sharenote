@@ -1,0 +1,17 @@
+  <%= form_for(@timetable) do|f| %>
+    
+    
+    <p>学期:</p>
+    <%= f.text_field :term %>   
+    <% if @timetable.errors.messages[:term].any? %>
+    <span class="error"><%= @timetable.errors.messages[:term][0] %></span>
+    <% end %>
+    
+    <p>メモ:</p>
+    <%= f.text_area :memo %>
+    
+   <%= f.hidden_field :user_id, :value => current_user.email %>
+        
+
+    <%= f.submit "完了"%>
+    <% end %>

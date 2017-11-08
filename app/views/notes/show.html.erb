@@ -1,0 +1,40 @@
+<div class="show note_show">
+   
+    <h2><%= @note.title %></h2>
+       
+    <%= simple_format(@note.content) %>
+    
+
+     <% if @timetable != nil && @lecture != nil %>
+       <% if Document.find_by(note_id: @note.id,lecture_id: @lecture.id) == nil %>
+        <%= form_for @document ,url: "/timetables/#{@timetable.id}/lectures/#{@lecture.id}/notes/#{@note.id}" do|f| %>
+           <%= f.hidden_field :note_id, :value => @note.id %>
+           <%= f.hidden_field :timetable_id, :value => @timetable.id %>
+           <%= f.hidden_field :lecture_id, :value => @lecture.id %>
+           <%= f.submit '時間割に追加' %>
+       <% end %>
+    <% else %>
+        <div class="show_destroy">
+    <%= link_to "時間割から削除", "/timetables/#{@timetable.id}/lectures/#{@lecture.id}/notes/#{@note.id}",data: {:confirm => '本当に削除して構いませんか?'}, :method => :delete %>
+    </div>
+    <% end %>
+    <% end %>
+    
+     
+    <div class="link">
+    <% if @note.user_id == current_user.email %>
+    <div class="show_edit">
+    <%= link_to "編集",edit_note_path(@note) %>
+    </div>
+    
+    <div class="show_destroy">
+    <%= link_to "削除", note_path(@note),data: {:confirm => '本当に削除して構いませんか?'}, :method => :delete %>
+    </div>
+    <% end %>
+    
+    <div class="show_return">
+        <%= link_to "戻る", notes_path %>
+    </div>
+    </div>
+    
+</div>

@@ -1,0 +1,19 @@
+<div class="top">
+        <div class="top_wrapper">
+        <div class="top_background">
+        </div>
+        <div class="top_img">
+        </div>
+            <div class="top_text">
+            <h1>Share Note</h1>
+                <div class="top_nav">
+            <% if !(user_signed_in?) %>
+                    <ul>
+                        <li><%= link_to '新規登録', new_user_registration_path, class: "create_account" %></li>
+                        <li><%= link_to 'ログイン', new_user_session_path, class: "login_account" %></li>
+                    </ul>
+            <% end %>
+                </div>
+            </div>
+            </div>
+        </div>

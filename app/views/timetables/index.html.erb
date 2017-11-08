@@ -1,0 +1,17 @@
+<div class="index table_index">
+<div class="add_index">
+    <%= link_to '新規追加', new_timetable_path %>
+</div>
+<h2>時間割一覧</h2>
+<ul>
+<% @timetables.each do|table| %>
+    <div class="index_title">
+    <li class="index_list">
+     <%= link_to table.term,timetable_path(table) %>
+    </li>
+    </div>
+    
+<% end %>
+    
+</ul>
+</div>

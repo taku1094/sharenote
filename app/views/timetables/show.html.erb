@@ -1,0 +1,186 @@
+<div class="show table_show">
+    
+    
+<div class="add_lecture">
+   <%= link_to '新規追加',new_timetable_lecture_path(@timetable) %>
+</div>
+    
+    <h2><%= @timetable.term %></h2>
+    
+    <table>
+        
+    <tr>
+        <th class="table_time"></th>
+        <th>月</th>
+        <th>火</th>
+        <th>水</th>
+        <th>木</th>
+        <th>金</th>
+    </tr>
+        
+    <tr>
+        <th class="table_time">1</th>
+        <td>
+            <% if @lectures = Lecture.where(date: "月",time: 1,user_id: current_user.email,term: @timetable.id) %>
+             <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "火",time: 1,user_id:  current_user.email,term: @timetable.id) %>
+            <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "水",time: 1,user_id: current_user.email,term: @timetable.id) %>
+            <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "木",time: 1,user_id:  current_user.email,term: @timetable.id) %>
+            <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "金",time: 1,user_id:  current_user.email,term: @timetable.id) %>
+           <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+    </tr>
+        
+    <tr>    
+        <th class="table_time">2</th>
+        <td>
+            <% if @lectures = Lecture.where(date: "月",time: 2,user_id: current_user.email,term: @timetable.id) %>
+           <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "火",time: 2,user_id: current_user.email,term: @timetable.id) %>
+           <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "水",time: 2,user_id: current_user.email,term: @timetable.id) %>
+           <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "木",time: 2,user_id: current_user.email,term: @timetable.id) %>
+           <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "金",time: 2,user_id: current_user.email,term: @timetable.id) %>
+           <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+    </tr>
+        
+    <tr>    
+        <th class="table_time">3</th>
+        <td>
+            <% if @lectures = Lecture.where(date: "月",time: 3,user_id: current_user.email,term: @timetable.id) %>
+           <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "火",time: 3,user_id: current_user.email,term: @timetable.id) %>
+            <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "水",time: 3,user_id: current_user.email,term: @timetable.id) %>
+           <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "木",time: 3,user_id: current_user.email,term: @timetable.id) %>
+            <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "金",time: 3,user_id: current_user.email,term: @timetable.id) %>
+            <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+    </tr>
+        
+    <tr>    
+        <th class="table_time">4</th>
+        <td>
+            <% if @lectures = Lecture.where(date: "月",time: 4,user_id: current_user.email,term: @timetable.id) %>
+            <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "火",time: 4,user_id: current_user.email,term: @timetable.id) %>
+           <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "水",time: 4,user_id: current_user.email,term: @timetable.id) %>
+            <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "木",time: 4,user_id: current_user.email,term: @timetable.id) %>
+            <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "金",time: 4,user_id: current_user.email,term: @timetable.id) %>
+            <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+    </tr>
+        
+    <tr>    
+        <th class="table_time">5</th>
+        <td>
+            <% if @lectures = Lecture.where(date: "月",time: 5,user_id: current_user.email,term: @timetable.id) %>
+            <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "火",time: 5,user_id: current_user.email,term: @timetable.id) %>
+           <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "水",time: 5,user_id: current_user.email,term: @timetable.id) %>
+            <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "木",time: 5,user_id: current_user.email,term: @timetable.id) %>
+           <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+        <td>
+            <% if @lectures = Lecture.where(date: "金",time: 5,user_id: current_user.email,term: @timetable.id) %>
+           <%= render "timetables/lectures" %>
+            <% end %>
+        </td>
+    </tr>
+        
+        
+    </table>
+    
+<h2>メモ</h2>
+<%= simple_format(@timetable.memo) %>
+    <div class="link">
+    <div class="show_edit">
+        <%= link_to "編集",edit_timetable_path(@timetable) %>
+    </div>
+    
+    <div class="show_destroy">
+        <%= link_to "削除",timetable_path(@timetable),data: {:confirm => '本当に削除して構いませんか?'}, :method => :delete %>
+    </div>
+    
+     <div class="show_return">
+        <%= link_to "戻る", timetables_path %>
+    </div>
+    
+    </div>
+    
+</div>

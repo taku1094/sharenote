@@ -1,0 +1,29 @@
+<div class="index note_index">
+<div class="add_index">
+   <%= link_to '新規作成', new_note_path %>
+</div>
+<h2>講義ノート</h2>
+    <%= form_tag notes_path, :method => 'get' do %>  
+    <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "検索", :title => nil %>
+    </p>
+<% end %>
+    <%= page_entries_info @notes %>
+<ul>
+<% @notes.each do|note| %>
+    <div class="index_title">
+    <li class="index_list">
+        <% if @timetable != nil && @lecture != nil %>
+        
+     <%= link_to note.title,timetable_lecture_note_path(@timetable,@lecture,note) %>
+        <% else %>
+        <%= link_to note.title,note_path(note) %>
+        <% end %>
+    </li>
+    </div>
+    <%= note.content.truncate(100) %>
+<% end %>
+</ul>    
+    <%= paginate @notes %>
+</div>

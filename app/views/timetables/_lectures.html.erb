@@ -1,0 +1,3 @@
+<% @lectures.each do|lecture| %>
+    <%= link_to lecture.name , timetable_lecture_path(@timetable,lecture) %>
+<% end %>

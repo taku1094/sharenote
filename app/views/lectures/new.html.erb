@@ -1,0 +1,35 @@
+<div class="form lecture_new">
+    <h2>新規作成</h2>
+    
+    <%= form_for @lecture, url: timetable_lectures_path(@timetable) do|f| %>
+      <p>講義名:</p>
+    <%= f.text_field :name %>   
+    <% if @lecture.errors.messages[:name].any? %>
+    <span class="error"><%= @lecture.errors.messages[:name][0] %></span>
+    <% end %>
+    <p>曜日:</p>
+    <%= f.select :date,[["月曜日","月"],["火曜日","火"],["水曜日","水"],["木曜日","木"],["金曜日","金"]] %>
+    
+    
+    <p>時限:</p>
+    <%= f.select :time, [["1限","1"],["2限","2"],["3限","3"],["4限","4"],["5限","5"]] %>
+     
+    
+    <p>講師名:</p>
+     <%= f.text_field :professor %>
+    
+    <p>講義室:</p>
+     <%= f.text_field :room %>
+    
+    
+    <p>メモ:</p>
+    <%= f.text_area :memo %>
+   
+   <%= f.hidden_field :user_id, :value => current_user.email %>
+   <%= f.hidden_field :term, :value => @timetable.id %>
+        
+
+    <%= f.submit "完了"%>
+    
+    <% end %>
+</div>
