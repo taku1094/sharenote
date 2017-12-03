@@ -6,28 +6,38 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-    
-    <div class="header">
-        <h1>Share Note</h1>
-    </div>
 
   <body>
+   
+      <div class="header">
+        <%= render "layouts/header" %>
+      </div>
+  
+      
       <div class="flash">
         <%= flash[:notice] %>
         <%= flash[:alert] %>
       </div>
     <%= yield %>
-      <nav>
+      <div class="test-nav">
           
             <%if user_signed_in? %>
-                <%= link_to "" , timetables_path,class: 'fa fa-calendar fa-5x' %>
-                <%= link_to "" , notes_path,class: 'fa fa-file-text-o fa-5x' %>
-                <%= link_to "" , edit_user_registration_path,class:'fa fa-user-o fa-5x' %>
-                <%= link_to "" , destroy_user_session_path,method: :delete,class: 'fa fa-sign-out fa-5x' %>
+                <%= link_to "" , timetables_path,class: 'fa fa-calendar' %>
+                <%= link_to "" , notes_path,class: 'fa fa-file-text-o' %>
+                <%= link_to "" , edit_user_registration_path,class:'fa fa-user-o' %>
+                <%= link_to "" , destroy_user_session_path,method: :delete,class: 'fa fa-sign-out' %>
             <% end %>
           
-        </nav>
+        </div>
+      <%if user_signed_in? %>
+<!-- footerがうまく行かない
+      <div class="footer">
+        render "layouts/footer" 
+    </div>
+-->
+      <% end %>
   </body>
 </html>

@@ -1,0 +1,14 @@
+<% if user_signed_in? %>
+<div class="header-mobile-menu">
+    <i class="fa fa-bars fa-3x" aria-hidden="true"></i>
+</div>
+
+<div class="header-pc-menu">       
+            
+                <%= link_to "" , timetables_path,class: 'fa fa-calendar fa-2x' %>
+                <%= link_to "" , notes_path,class: 'fa fa-file-text-o fa-2x' %>
+                <%= link_to "" , edit_user_registration_path,class:'fa fa-user-o fa-2x' %>
+                <%= link_to "" , destroy_user_session_path,method: :delete,class: 'fa fa-sign-out fa-2x' %>
+</div>
+<% end %>
+<h1>Share Note</h1>

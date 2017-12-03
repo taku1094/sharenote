@@ -14,10 +14,18 @@
  *= require_self
  */
 
+
+    /* common */
+
 *{
     margin: 0;
     padding: 0;
 }
+
+body{
+    width: 100%;
+}
+
 li{
     list-style: none;
     text-decoration: none;
@@ -25,111 +33,302 @@ li{
 a{
     text-decoration: none;
 }
+
+input[type=submit]{
+    font-size: 20px;
+    color: #fff;
+    background-color: #993399;
+    border-radius: 20px;
+    margin-left: 20px;
+}
+
+input[type=text]{
+    border-color: #ccc;
+}
+
 .flash{
-    height: 50px;
-    font-size: 30px;
-    line-height: 50px;
+    height: 20px;
+    font-size: 14px;
+    line-height: 20px;
     color: #fff;
     background-color: #ff9933;
 }
 
-input[type=submit]{
-    font-size: 40px;
-    color: #fff;
-    background-color: #993399;
-    border-radius: 20px;
+@media(min-width: 750px){
+    input[type=submit]{
+        font-size: 30px;
+    } 
+    
+    .flash{
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    }
 }
 
-/* ここまでが共通 */
+@media(min-width: 950px){
+    input[type=submit]{
+        font-size: 40px;
+    } 
+    
+    .flash{
+    height: 50px;
+    font-size: 36px;
+    line-height: 50px;
+    }
+}
+
+   /* common header */
+
 .header{
     position: fixed;           
     top: 0px;                  
     left: 0px;  
     width: 100%;
-    height: 150px;
+    height: 100px;
     background-color: #009933;
 }
 
 body{
-    margin: 150px 0;
+    margin-top: 100px;
 }
 
     .header h1{
         color: #fff;
-        font-size: 50px;
+        font-size: 30px;
         margin-left: 30px;
-        line-height: 150px;
+        line-height: 100px;
         font-family: sans-serif;
         text-shadow: 0px 0px 10px #000, 10px 10px 15px #000;
     }
+
+.header-mobile-menu{
+    color: #fff;
+    margin-top: 30px;
+    margin-right: 20px;
+    float: right;
+    cursor: pointer;
+    text-shadow: 0px 0px 10px #000, 10px 10px 15px #000;
+}
+
+.header-pc-menu{
+    float: right;
+    margin-top: 50px;
+    margin-right: 50px;
+   display: none; 
+}
+
+.header-pc-menu < li{
+    display: inline-block;
+    cursor: pointer;
+}
+
+.header-pc-menu a{
+    color: #fff;
+    text-decoration: none;
+    background-color: #993399;
+    padding: 10px 10px;
+}
+.header-pc-menu a:hover{
+    transition: 0.5s;
+    background-color: #cc66cc;
+}
+
+  /* tablet header */
+
+@media(min-width: 750px){
+    .header{
+        height: 120px;
+    }
     
+    body{
+    margin-top: 120px;
+}
     
-/* ここまでがheader */
+    .header h1{
+        font-size: 40px;
+        line-height: 120px;
+    }
+    
+    .header-mobile-menu{
+        margin-top: 35px;
+    }
+}
+
+
+/* pc header */
+
+@media(min-width: 950px){
+    .header{
+        height: 150px;
+    }
+    
+    body{
+    margin-top: 150px;
+}
+    
+    .header h1{
+        font-size: 50px;
+        line-height: 150px;
+    }
+    
+    .header-pc-menu{
+        display: block;
+    }
+    
+    .header-mobile-menu{
+        display: none;
+    }
+}
+
+/* common footer */
+     
+    .footer{
+    position: absolute;
+    bottom: 0px;
+    background-color: #009933;
+    height: 30px;
+    width: 100%;
+    font-size: 14px;
+    color: #ccc;
+    text-align: center;
+}
+
+@media(min-width: 950px){
+    .footer{
+        height: 40px;
+        font-size: 22px;
+    }
+}
+
+/* common top */
+
 .top_background{
     position: absolute;
     width: 100%;
-    height: 1600px;
+    height: 639px;
     background-color: rgba(0,0,0,0.5);
 }
 .top_img{
 width: 100%;
-height: 1600px;
+height: 639px;
     background-image: url("space.jpg");
     background-size: cover;
 }
-.top_text{
-    color: #fff;
-    position: absolute;
-    top: 550px;
-    left: 150px;
-    /* text-align or marginで中央ぞろえにしたい */
-}
+
 .top h1{
-    font-size: 120px;
+    position: absolute;
+    top: 200px;
+    left: 20%;
+    color: red;
+    font-size: 80px;
     font-family: "Lucida Console", Monaco, monospace;
+    color: #fff;   
 }
+
 .top_nav{
-    text-align: center;
-    margin-top: 200px;
+    position: absolute;
+    top: 350px;
+    left: 15%;
+    margin-top: 100px;
     margin-left: 40px;
    
 }
-.create_account{
-    font-size: 50px;
+
+.top-nav{
+    font-size: 25px;
     background-color: #ff8844;
     border-radius: 30px;
-    padding: 40px 200px;
-    height: 30px;
+    padding: 10px 50px;
+    height: 20px;
     text-align: center;
-    
 }
+
 
 .login_account{
     position: relative;
-    top: 120px;
-    font-size: 50px;
-    background-color: #ff8844;
-    border-radius: 30px;
-    padding: 40px 200px;
-    height: 30px;
-    text-align: center;
-    
+    top: 50px;
 }
 
 .top_nav a{ color: #fff;}
 
-/* ここまでがtop */
+/* top title and navigation position change */
+@media(min-width: 500px){
+   
+    .top_nav{
+        position: absolute;
+        left: 25%;
+    }
     
-.form{
-    width: 600px;
-    height: auto;
-    margin: 0 auto;
+    .top-nav{
+        font-size: 40px;
+    }
 }
 
+@media(min-width: 750px){
+    .top h1{
+        font-size: 90px;
+        position: absolute;
+        top: 300px;
+        left: 20%;
+    }
+    
+    .top_nav{
+        position: absolute;
+        top: 500px;
+        left: 30%;
+    }
+    
+    .top-nav{
+        font-size: 50px;
+    }
+    
+    .top_background{
+        height: 985px;
+    }
+    
+    .top_img{
+        height: 985px;
+    }
+    
+}
 
+@media(min-width: 950px){
+    .top h1{
+        font-size: 100px;
+        position: absolute;
+        top: 400px;
+        left: 20%;
+    }
+    
+    .top_nav{
+        position: absolute;
+        top: 600px;
+        left: 30%;
+    }
+    
+    .top-nav{
+        font-size: 60px;
+    }
+    
+    .top_background{
+        height: 1450px;
+    }
+    
+    .top_img{
+        height: 1450px;
+    }
+    
+}
+
+/* common form */
+
+.form{
+    width: 100%;
+}
 
 .form h2{
-    font-size: 70px;
+    font-size: 30px;
     font-family: sans-serif;
     font-weight: normal;
     border-bottom: 1px solid #aaa;
@@ -137,15 +336,24 @@ height: 1600px;
     margin-bottom: 5px;
     padding: 5px 10px;
     width: 300px;
-    
 }
+
 .form p{
-    margin-top: 40px;
-    font-size: 50px;
+    margin-top: 20px;
+    font-size: 20px;
 }
+
+.form label{
+    font-size: 18px;
+}
+
+.form a{
+    font-size: 18px;
+}
+
 input{
-    font-size: 50px;
-    padding: 15px;
+    font-size: 22px;
+    padding: 10px;
     margin-top: 10px;
 }
 
@@ -153,141 +361,83 @@ select{
     font-size: 20px;
 }
 
-
 textarea{
-    font-size: 40px;
-    width: 700px;
-    height: 300px;
+    font-size: 22px;
+    width: 80%;
+    height: 150px;
     margin-top: 10px;
     padding: 15px;
     line-height: 1.4em;
+    border-color: #ccc;
 }
 
-.note-textarea{
-    height: 800px;
-}
-
-/* ここまでformの共通部分　*/
-.show{
-    width: 600px;
-    height: auto;
-    margin: 0 auto;
-}
-
-.show h2{
-    font-size: 50px;
-    font-family: sans-serif;
-    font-weight: normal;
-    border-bottom: 1px solid #aaa;
-    margin-top: 30px;
-    margin-bottom: 5px;
-    padding: 5px 10px;
-    width: 300px;
-}
-.show p{
-    margin-top: 30px;
-    font-size: 40px;
-}
-
-.link a{
-    font-size: 40px;
-}
-
-.show_edit a{
-    position: relative;
-    top: 40px;
-    color: #fff;
-    text-decoration: none;
-    background-color: #3b5998;
-    padding: 10px 20px;
-    border-radius: 10px;
-    
-}
-.show_edit a:hover{
-    transition: 0.5s;
-    background-color: #5d7bba;
-}
-.show_destroy a{
-    position: relative;
-    bottom: 18px;
-    left: 150px;
-    color: #fff;
-    text-decoration: none;
-    background-color: #dd0000;
-    padding: 10px 20px;
-    border-radius: 5px;
-    
-}
-.show_destroy a:hover{
-    transition: 0.5s;
-    background-color: #ff3333;
-}
-.show_return a{
-    position: relative;
-    bottom: 76px;
-    left: 300px;
-    color: #fff;
-    text-decoration: none;
-    background-color: #ff9933;
-    padding: 10px 20px;
-    border-radius: 10px;
-    
-}
-.show_return a:hover{
-    transition: 0.5s;
-    background-color: #ffaa55;
-}
-.show_like a{
-    color: #000;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    font-size: 22px;
-}
-
-/* ここまでshowの共通部分　*/
-.index{
-    width: 600px;
-    height: auto;
-    margin: 0 auto;
-}
-.index h2{
-    font-size: 60px;
-    font-family: sans-serif;
-    font-weight: normal;
-    border-bottom: 1px solid #aaa;
-    margin-top: 30px;
-    margin-bottom: 5px;
-    padding: 5px 10px;
-    width: 300px;
-}
-.add_index a{
-    font-size: 40px;
+.form .show_return{
     float: right;
     position: relative;
-    top: 20px;
+    bottom: 78px;
+}
+
+@media(min-width: 600px){
+    .form{
+        position: relative;
+        left: 20%;
+    }
+    
+    .form h2{
+        font-size: 40px;
+    }
+    
+    .form p{
+        font-size: 30px;
+    }
+    
+    .form label{
+        font-size: 20px;
+    }
+    
+    .form a{
+        font-size: 20px;
+    }
+}
+
+/* common index */
+
+.index{
+    width: 100%;
+}
+
+.index h2{
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: normal;
+    border-bottom: 1px solid #aaa;
+}
+
+.add_index a{
+    font-size: 20px;
+    position: relative;
+    top: 5px;
+    float: right;
     color: #fff;
     text-decoration: none;
     background-color: #3b5998;
-    padding: 8px 15px;
+    padding: 4px 8px;
     border-radius: 8px;
     
 }
+
 .add_index a:hover{
     transition: 0.5s;
     background-color: #5d7bba;
 }
 
-
 .index_title{
     margin-top: 10px;
-    font-size: 40px;
-    padding: 30px 20px;
+    font-size: 24px;
+    padding: 10px 5px;
 }
 
 .index_list a{
-    position: relative;
-    top: 1px;
     color: #fff;
     text-decoration: none;
     background-color: #009933;
@@ -299,28 +449,169 @@ textarea{
     background-color: #22bb55;
 }
 
-/* ここまでがindexの共通部分 */
+.note-content{
+    margin-left: 40px;
+}
+
+/* tablet index */
+
+@media(min-width: 750px){
+    .index h2{
+        font-size: 45px;
+    }
+    
+    .add_index a{
+        font-size: 30px;
+    }
+    
+    .index_title{
+        font-size: 40px;
+    }
+    
+    .note-content{
+        font-size: 24px;
+    }
+}
+
+@media(min-width: 950px){
+    .index h2{
+        font-size: 60px;
+    }
+    
+    .add_index a{
+        font-size: 40px;
+    }
+    
+    .index_title{
+        font-size: 60px;
+    }
+    
+    .note-content{
+        font-size: 40px;
+    }
+    
+    
+}
+
+/* common show */
+
+.show{
+    width: 100%;
+}
+
+.show h2{
+    font-size: 30px;
+    font-family: sans-serif;
+    font-weight: normal;
+    border-bottom: 1px solid #aaa;
+}
+
+.show p{
+    font-size: 22px;
+}
+
+.link a{
+    font-size: 22px;
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    float: left;
+    margin-top: 30px;
+    margin-left: 10px;
+}
+
+.show_edit a{
+    background-color: #3b5998;
+}
+
+.show_edit a:hover{
+    transition: 0.5s;
+    background-color: #5d7bba;
+}
+
+.show_destroy a{
+    background-color: #dd0000;
+}
+
+.show_destroy a:hover{
+    transition: 0.5s;
+    background-color: #ff3333;
+}
+
+.show_return a{
+    background-color: #ff9933;
+}
+
+.show_return a:hover{
+    transition: 0.5s;
+    background-color: #ffaa55;
+}
+
+.show_like a{
+    color: #000;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 22px;
+}
+
+@media(min-width: 750px){
+    .show h2{
+        font-size: 45px;
+        margin-left: 30px;
+    }
+    
+    .show p{
+        font-size: 30px;
+        margin-top: 10px;
+        margin-left: 30px;
+    }
+    
+    .link a{
+        font-size: 40px;
+    }
+    
+}
+
+@media(min-width: 950px){
+    .show h2{
+        font-size: 60px;
+        margin-left: 50px;
+    }
+    
+    .show p{
+        font-size: 40px;
+        margin-top: 20px;
+        margin-left: 50px;
+    }
+    
+    .link a{
+        font-size: 50px;
+    }
+    
+    
+}
+
+/* common table */
 
 .add_lecture a{
-    font-size: 35px;
-    float: right;
+    font-size: 22px;
     position: relative;
-    top: 20px;
+    top: 5px;
+    float: right;
     color: #fff;
     text-decoration: none;
     background-color: #3b5998;
-    padding: 8px 15px;
+    padding: 4px 8px;
     border-radius: 5px;
-    
 }
+
 .add_lecture a:hover{
     transition: 0.5s;
     background-color: #5d7bba;
 }
-.add_lecture p{
-    margin: 0;
-    font-size: 16px;
-}
+
 table{
     width: 100%;
 }
@@ -348,39 +639,33 @@ table a:hover{
     transition: 0.5s;
     background-color: #22bb55;
 }
-/* これは、table_show に対するcss */
+
+/* table_show */
+
 .add_index_p p{
     font-size: 16px;
     padding: 0;
     margin: 0;
 }
-.add_index_p a{
-    position: relative;
-    top: 47px;
-    right: 15px;
-}
-/* これは、　lecture_show に対するcss */
+
+/* lecture_show */
+
 .show_add a{
     float: right;
-    position: relative;
-    top: 42px;
     color: #fff;
     text-decoration: none;
     background-color: #993399;
     padding: 5px 10px;
-    border-radius: 5px;
-    
+    border-radius: 5px;   
 }
+
 .show_add a:hover{
     transition: 0.5s;
     background-color: #cc66cc;
 }
 
-
 .show_delete a{
     float: right;
-    position: relative;
-    top: 42px;
     color: #fff;
     text-decoration: none;
     background-color: #993399;
@@ -392,32 +677,11 @@ table a:hover{
     transition: 0.5s;
     background-color: #cc66cc;
 }
-/* ここまでlecturesに関するcss */
-nav{
-    position: fixed;
-    bottom: 0%;
-    width: 850px;
-    margin: 0px auto;
-}
 
-.fa{
-    position: relative;
-    left: 80px;
-    height: 100px;
-    width: 100px;
-    border-radius: 100px;
-    float: left;
-    margin: 50px 30px;
-}
 
-nav a{
-    color: #fff;
-    text-decoration: none;
-    background-color: #993399;
-    padding: 10px 10px;
-}
-nav a:hover{
-    transition: 0.5s;
-    background-color: #cc66cc;
-}
-/* ここまでnavigationのcss */
+
+
+
+
+
+

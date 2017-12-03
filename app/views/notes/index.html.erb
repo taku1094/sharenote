@@ -22,7 +22,7 @@
         <% end %>
     </li>
     </div>
-    <%= note.content.truncate(100) %>
+    <p class="note-content"><%= note.content.truncate(100) %></p>
 <% end %>
 </ul>    
     <%= paginate @notes %>

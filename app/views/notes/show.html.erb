@@ -3,9 +3,9 @@
     <h2><%= @note.title %></h2>
        
     <%= simple_format(@note.content) %>
-    
-
-     <% if @timetable != nil && @lecture != nil %>
+     
+    <div class="link">
+    <% if @timetable != nil && @lecture != nil %>
        <% if Document.find_by(note_id: @note.id,lecture_id: @lecture.id) == nil %>
         <%= form_for @document ,url: "/timetables/#{@timetable.id}/lectures/#{@lecture.id}/notes/#{@note.id}" do|f| %>
            <%= f.hidden_field :note_id, :value => @note.id %>
@@ -19,9 +19,6 @@
     </div>
     <% end %>
     <% end %>
-    
-     
-    <div class="link">
     <% if @note.user_id == current_user.email %>
     <div class="show_edit">
     <%= link_to "編集",edit_note_path(@note) %>
